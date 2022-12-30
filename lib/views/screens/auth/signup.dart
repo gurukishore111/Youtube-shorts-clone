@@ -69,7 +69,7 @@ class SignUp extends StatelessWidget {
                     bottom: -10,
                     left: 80,
                     child: IconButton(
-                      onPressed: () => print("Tapped the avatar edit"),
+                      onPressed: () => authController.pickImageFromGallery(),
                       icon: Icon(
                         Icons.add_a_photo,
                         color: buttonColor,
@@ -128,7 +128,12 @@ class SignUp extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                onTap: () => print('login'),
+                onTap: () => authController.registerUser(
+                  _userNameController.text,
+                  _emailController.text,
+                  _passwordController.text,
+                  authController.profilePhoto,
+                ),
                 child: const Center(
                   child: Text(
                     'Register',
