@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shorts_clone/constants.dart';
 import 'package:shorts_clone/views/screens/auth/login.dart';
+import 'package:shorts_clone/views/screens/auth/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +16,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Youtube shorts Demo',
-      themeMode: ThemeMode.dark,
       theme: ThemeData(
         fontFamily: 'Product Sans',
-      ).copyWith(scaffoldBackgroundColor: backgroundColor),
-      home: LoginScreen(),
+      ).copyWith(
+        scaffoldBackgroundColor: backgroundColor,
+      ),
+      home: SignUp(),
     );
   }
 }

@@ -22,12 +22,16 @@ class TextInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
+      cursorColor: borderColor,
       decoration: InputDecoration(
         labelText: labelText,
-        prefixIcon: Icon(icon),
-        iconColor: borderColor,
-        labelStyle: const TextStyle(fontSize: 20, color: borderColor),
+        prefixIcon: Icon(
+          icon,
+          color: buttonColor,
+        ),
+        prefixIconColor: borderColor,
+        labelStyle: const TextStyle(fontSize: 16, color: borderColor),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
