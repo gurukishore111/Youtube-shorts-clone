@@ -1,7 +1,7 @@
 # Youtube Shorts Clone
 
 Features:
-  - Authentication with Email & Password
+  - Authentication with Email & Password (firebase)
   - Uploading Videos with Caption
   - Compressing Videos
   - Generating Thumbnails Out of Video
