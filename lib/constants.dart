@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shorts_clone/controller/auth_controller.dart';
 import 'package:shorts_clone/views/screens/add_video/add_video.dart';
+import 'package:shorts_clone/views/screens/search_screen/search_screen.dart';
 import 'package:shorts_clone/views/screens/videos/video.dart';
 
 // pages
 List pages = [
   VideoScreen(),
-  Text('Search Screen'),
+  SearchScreen(),
   const AddVideoScreen(),
   Text('Message Screen'),
   Text('Profile Screen'),

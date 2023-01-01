@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Product Sans',
       ).copyWith(
         scaffoldBackgroundColor: backgroundColor,
+        colorScheme: ThemeData().colorScheme.copyWith(primary: Colors.red),
       ),
       home: LoginScreen(),
     );

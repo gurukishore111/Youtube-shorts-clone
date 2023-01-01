@@ -111,7 +111,7 @@ class VideoScreen extends StatelessWidget {
                                   Text(
                                     data.username,
                                     style: const TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -169,7 +169,7 @@ class VideoScreen extends StatelessWidget {
                                           videoController.likeVideo(data.id),
                                       child: Icon(
                                         Icons.favorite,
-                                        size: 30,
+                                        size: 25,
                                         color: data.likes.contains(
                                                 authController.user.uid)
                                             ? Colors.red
@@ -180,7 +180,7 @@ class VideoScreen extends StatelessWidget {
                                     Text(
                                       data.likes.length.toString(),
                                       style: const TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 15,
                                         color: Colors.white,
                                       ),
                                     )
@@ -200,7 +200,7 @@ class VideoScreen extends StatelessWidget {
                                       },
                                       child: const Icon(
                                         Icons.comment,
-                                        size: 30,
+                                        size: 25,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -208,7 +208,7 @@ class VideoScreen extends StatelessWidget {
                                     Text(
                                       data.commentCount.toString(),
                                       style: const TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 15,
                                         color: Colors.white,
                                       ),
                                     )
@@ -220,7 +220,7 @@ class VideoScreen extends StatelessWidget {
                                       onTap: () {},
                                       child: const Icon(
                                         Icons.reply,
-                                        size: 30,
+                                        size: 25,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -228,7 +228,7 @@ class VideoScreen extends StatelessWidget {
                                     Text(
                                       data.shareCount.toString(),
                                       style: const TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 15,
                                         color: Colors.white,
                                       ),
                                     )
