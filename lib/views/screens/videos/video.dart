@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shorts_clone/constants.dart';
 import 'package:shorts_clone/controller/video_controller.dart';
+import 'package:shorts_clone/views/screens/comment_screen/comment_screen.dart';
 import 'package:shorts_clone/views/widgets/circle_animation.dart';
 import 'package:shorts_clone/views/widgets/video_player_item.dart';
 import 'package:video_player/video_player.dart';
@@ -188,7 +189,15 @@ class VideoScreen extends StatelessWidget {
                                 Column(
                                   children: [
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => CommentScreen(
+                                              id: data.id,
+                                            ),
+                                          ),
+                                        );
+                                      },
                                       child: const Icon(
                                         Icons.comment,
                                         size: 30,

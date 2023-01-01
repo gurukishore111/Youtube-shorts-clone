@@ -50,7 +50,7 @@ class UploadVideoController extends GetxController {
       var allDocs = await firestoreApp.collection('videos').get();
       int len = allDocs.docs.length;
       Get.snackbar(
-        'Uploading Processing!',
+        'Uploading in Process',
         "Processing uploading steps 2/4",
         colorText: Colors.white,
       );
@@ -86,7 +86,7 @@ class UploadVideoController extends GetxController {
           .set(video.toJson());
 
       Get.snackbar(
-        'Successfully Uploading!',
+        'Successfully Uploaded!',
         "Your Video is streaming now",
         colorText: Colors.green.shade400,
       );
