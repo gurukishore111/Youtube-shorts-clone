@@ -1,6 +1,18 @@
-# shorts_clone
+# Youtube Shorts Clone
 
-A new Flutter project.
+Features:
+  - Authentication with Email & Password
+  - Uploading Videos with Caption
+  - Compressing Videos
+  - Generating Thumbnails Out of Video
+  - Displaying Videos with Caption
+  - Liking on Videos
+  - Commenting on Videos
+  - Liking the Comments
+  - Searching Users
+  - Following Users
+  - Displaying Followers, Following, Likes & Posts of User
+
 
 ## Getting Started
 
