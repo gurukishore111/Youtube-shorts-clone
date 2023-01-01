@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shorts_clone/constants.dart';
 import 'package:shorts_clone/models/video.dart';
+import 'package:shorts_clone/views/screens/add_video/add_video.dart';
 import 'package:video_compress/video_compress.dart';
 
 class UploadVideoController extends GetxController {
@@ -90,7 +91,7 @@ class UploadVideoController extends GetxController {
         colorText: Colors.green.shade400,
       );
 
-      Get.back();
+      Get.offAll(() => const AddVideoScreen());
     } catch (e) {
       Get.snackbar(
         'Error creating account',

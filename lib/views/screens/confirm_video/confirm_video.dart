@@ -37,10 +37,9 @@ class _ConfirmVideoScreenState extends State<ConfirmVideoScreen> {
   }
 
   @override
-  void deactivate() {
-    print("deactivate");
-    super.deactivate();
-    controller.pause();
+  void dispose() {
+    super.dispose();
+    controller.dispose();
   }
 
   @override
