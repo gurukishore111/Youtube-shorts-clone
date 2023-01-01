@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shorts_clone/constants.dart';
+import 'package:shorts_clone/controller/upload_video_controller.dart';
 import 'package:shorts_clone/views/widgets/text_input.dart';
 import 'package:video_player/video_player.dart';
+import 'package:get/get.dart';
 
 class ConfirmVideoScreen extends StatefulWidget {
   final File videoFile;
@@ -19,6 +21,9 @@ class _ConfirmVideoScreenState extends State<ConfirmVideoScreen> {
   TextEditingController songNameController = TextEditingController();
   TextEditingController captionController = TextEditingController();
 
+  UploadVideoController uploadVideoController =
+      Get.put(UploadVideoController());
+
   @override
   void initState() {
     super.initState();
@@ -29,6 +34,13 @@ class _ConfirmVideoScreenState extends State<ConfirmVideoScreen> {
     controller.play();
     controller.setVolume(1.5);
     controller.setLooping(true);
+  }
+
+  @override
+  void deactivate() {
+    print("deactivate");
+    super.deactivate();
+    controller.pause();
   }
 
   @override
@@ -57,9 +69,10 @@ class _ConfirmVideoScreenState extends State<ConfirmVideoScreen> {
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   width: MediaQuery.of(context).size.width - 20,
                   child: TextInputField(
-                      controller: songNameController,
-                      labelText: 'Song Name',
-                      icon: Icons.music_note),
+                    controller: songNameController,
+                    labelText: 'Song Name',
+                    icon: Icons.music_note,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -77,7 +90,10 @@ class _ConfirmVideoScreenState extends State<ConfirmVideoScreen> {
                   height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => uploadVideoController.uploadVideo(
+                        songNameController.text,
+                        captionController.text,
+                        widget.videoPath),
                     style: ElevatedButton.styleFrom(
                         primary: buttonColor,
                         padding:
