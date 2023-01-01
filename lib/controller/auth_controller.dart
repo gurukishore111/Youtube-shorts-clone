@@ -6,10 +6,30 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shorts_clone/constants.dart';
 import 'package:shorts_clone/models/user.dart' as models;
+import 'package:shorts_clone/views/screens/auth/login.dart';
+import 'package:shorts_clone/views/screens/home/home.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
   late Rx<File?> _pickedImage;
+  late Rx<User?> _user;
+
+  @override
+  void onReady() {
+    super.onReady();
+    _user = Rx<User?>(firebaseAuth.currentUser);
+    // event listener for auth change
+    _user.bindStream(firebaseAuth.authStateChanges());
+    ever(_user, _setInitalScreen);
+  }
+
+  _setInitalScreen(User? user) {
+    if (user == null) {
+      Get.offAll(() => LoginScreen());
+    } else {
+      Get.offAll(() => const HomeScreen());
+    }
+  }
 
   File? get profilePhoto => _pickedImage.value;
 

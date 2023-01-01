@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shorts_clone/constants.dart';
+import 'package:shorts_clone/views/screens/auth/login.dart';
 import 'package:shorts_clone/views/widgets/text_input.dart';
+import 'package:get/get.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
@@ -27,10 +29,10 @@ class SignUp extends StatelessWidget {
                   color: buttonColor,
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: 6,
                 ),
                 Text(
-                  'Shorts Clone',
+                  'Shorts',
                   style: TextStyle(
                     fontSize: 30,
                     color: buttonColor,
@@ -44,7 +46,7 @@ class SignUp extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 15,
+              height: 25,
             ),
             const Text(
               'Register',
@@ -157,7 +159,7 @@ class SignUp extends StatelessWidget {
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
                 InkWell(
-                  onTap: () => print('Login'),
+                  onTap: () => Get.offAll(() => LoginScreen()),
                   child: Text(
                     "Login",
                     style: TextStyle(

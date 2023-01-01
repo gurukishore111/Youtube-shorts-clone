@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Youtube shorts Demo',
       theme: ThemeData(
+        brightness: Brightness.dark,
         fontFamily: 'Product Sans',
       ).copyWith(
         scaffoldBackgroundColor: backgroundColor,
