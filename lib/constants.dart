@@ -3,12 +3,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shorts_clone/controller/auth_controller.dart';
+import 'package:shorts_clone/views/screens/add_video/add_video.dart';
 
 // pages
 const pages = [
   Text('Home Screen'),
   Text('Search Screen'),
-  Text('Add video Screen'),
+  AddVideoScreen(),
   Text('Message Screen'),
   Text('Profile Screen'),
 ];
