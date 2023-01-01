@@ -7,10 +7,10 @@ import 'package:shorts_clone/views/screens/add_video/add_video.dart';
 import 'package:shorts_clone/views/screens/videos/video.dart';
 
 // pages
-const pages = [
+List pages = [
   VideoScreen(),
   Text('Search Screen'),
-  AddVideoScreen(),
+  const AddVideoScreen(),
   Text('Message Screen'),
   Text('Profile Screen'),
 ];
