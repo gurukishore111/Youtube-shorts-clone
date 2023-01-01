@@ -42,7 +42,7 @@ class AuthController extends GetxController {
       Get.snackbar(
         'Profile Picture',
         'You have successfully selected your profile picture!',
-        colorText: Colors.red.shade400,
+        colorText: Colors.green.shade400,
       );
     }
     _pickedImage = Rx<File?>(File(pickedImg!.path));
@@ -126,5 +126,9 @@ class AuthController extends GetxController {
         colorText: Colors.red.shade400,
       );
     }
+  }
+
+  void signOut() async {
+    await firebaseAuth.signOut();
   }
 }

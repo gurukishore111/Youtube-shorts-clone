@@ -4,6 +4,7 @@ import 'package:shorts_clone/controller/search_controller.dart';
 import 'package:shorts_clone/models/user.dart';
 import 'package:shorts_clone/views/screens/comment_screen/comment_screen.dart';
 import 'package:get/get.dart';
+import 'package:shorts_clone/views/screens/profile_screen/profile_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({Key? key}) : super(key: key);
@@ -44,7 +45,11 @@ class SearchScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   User user = searchController.searchedUsers[index];
                   return InkWell(
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProfileScreen(uid: user.uid),
+                      ),
+                    ),
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(
