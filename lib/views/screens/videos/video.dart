@@ -164,11 +164,15 @@ class VideoScreen extends StatelessWidget {
                                 Column(
                                   children: [
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () =>
+                                          videoController.likeVideo(data.id),
                                       child: Icon(
                                         Icons.favorite,
                                         size: 30,
-                                        color: Colors.red,
+                                        color: data.likes.contains(
+                                                authController.user.uid)
+                                            ? Colors.red
+                                            : Colors.white,
                                       ),
                                     ),
                                     const SizedBox(height: 7),
