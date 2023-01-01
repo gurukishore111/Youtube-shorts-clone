@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shorts_clone/constants.dart';
 import 'package:shorts_clone/controller/auth_controller.dart';
+import 'package:shorts_clone/views/screens/auth/login.dart';
 import 'package:shorts_clone/views/screens/auth/signup.dart';
 
 void main() async {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ).copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: SignUp(),
+      home: LoginScreen(),
     );
   }
 }

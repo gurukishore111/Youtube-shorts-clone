@@ -21,7 +21,7 @@ class AuthController extends GetxController {
       Get.snackbar(
         'Profile Picture',
         'You have successfully selected your profile picture!',
-        colorText: Colors.white,
+        colorText: Colors.red.shade400,
       );
     }
     _pickedImage = Rx<File?>(File(pickedImg!.path));
@@ -50,7 +50,7 @@ class AuthController extends GetxController {
         // save out user
         print(email + "✅" + password);
         UserCredential cred = await firebaseAuth.createUserWithEmailAndPassword(
-          email: email,
+          email: email.trim(),
           password: password,
         );
         print(cred);
@@ -66,18 +66,43 @@ class AuthController extends GetxController {
             .collection('users')
             .doc(cred.user!.uid)
             .set(user.toJson());
+        Get.snackbar(
+          'Successfully register 🎉!',
+          'Your account has been successfully created.',
+          colorText: Colors.green.shade400,
+        );
       } else {
         Get.snackbar(
           'Error creating account',
           'Please enter all the fields',
-          colorText: Colors.white,
+          colorText: Colors.red.shade400,
         );
       }
     } catch (e) {
       Get.snackbar(
         'Error creating account',
         e.toString(),
-        colorText: Colors.white,
+        colorText: Colors.red.shade400,
+      );
+    }
+  }
+
+  void loginUser(String email, String password) async {
+    try {
+      if (email.isNotEmpty && password.isNotEmpty) {
+        await firebaseAuth.signInWithEmailAndPassword(
+            email: email.trim(), password: password);
+        Get.snackbar(
+          'Login Successfully🎉!',
+          'Now you good to go',
+          colorText: Colors.green.shade400,
+        );
+      }
+    } catch (e) {
+      Get.snackbar(
+        'Error creating account',
+        e.toString(),
+        colorText: Colors.red.shade400,
       );
     }
   }
